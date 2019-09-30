@@ -2,6 +2,7 @@ var express = require('express')
   , http = require('http')
   , app = express()
   , server = http.createServer(app)
+  , request = require('request');
 
 var url="https://ryul-k.github.io/Express/2.html";
 
