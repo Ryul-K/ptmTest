@@ -1,7 +1,8 @@
-var request=require('request');
 var express = require('express')
+  , http = require('http')
+  , app = express()
+  , server = http.createServer(app)
 
-var app = express();
 var url="https://ryul-k.github.io/Express/2.html";
 
 request(url, function(err, res, body){
@@ -9,6 +10,13 @@ request(url, function(err, res, body){
 
 })
 
-http.createServer(app).listen(3000, function(){
-  console.log('Express 서버가 3000번 포트에서 시작됨.');
-});
+
+// app.get('/',function(req,res){
+//   ...
+// })
+
+server.listen(8000,'https://34.84.99.174/',function(){
+ server.close(function(){
+   server.listen(8001,'/')
+ })
+})
